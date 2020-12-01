@@ -8,4 +8,3 @@ def squirrel(N):
     number = 10 ** (lengh - 1)
     result = factorial // number
     return result
-print(squirrel(4))
