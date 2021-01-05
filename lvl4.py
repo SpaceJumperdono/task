@@ -10,6 +10,7 @@ def parse_list(L, battalion):
     for j in battalion:
         if(m == 2):
             k += 1
+            m = 0
         a[k].append(j-1)
         m += 1
     return a
@@ -43,3 +44,5 @@ def ConquestCampaign(N, M, L, battalion):
             ready_solder = neigborhoods
         else:
             return cnt
+        
+print(ConquestCampaign(3, 4, 3, [2, 2, 2, 2, 3, 4]))
