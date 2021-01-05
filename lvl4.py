@@ -32,7 +32,8 @@ def ConquestCampaign(N, M, L, battalion):
     matrix = create_matrix(N, M)
     ready_solder = parse_list(L, battalion)
     cnt = 0
-    while True:
+    neigborhoods = ready_solder
+    while neigborhoods:
         neigborhoods = []
         for solder in ready_solder:
             x = solder[0]
@@ -44,5 +45,5 @@ def ConquestCampaign(N, M, L, battalion):
             ready_solder = neigborhoods
         else:
             return cnt
+print(ConquestCampaign(3, 4, 1, [3, 4]))
         
-print(ConquestCampaign(3, 4, 3, [2, 2, 2, 2, 3, 4]))
