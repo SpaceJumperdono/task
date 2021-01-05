@@ -1,13 +1,13 @@
 def create_matrix(N, M):
     return [[False] * M for i in range(N)]
 
-def parse_list(L, M):
+def parse_list(L, battalion):
     a = []
     for i in range(L):
         a.append([])
     k = 0
     m = 0
-    for j in M:
+    for j in battalion:
         if(m == 2):
             k += 1
         a[k].append(j-1)
@@ -27,9 +27,9 @@ def get_all_neigborhoods(x, y, matrix, N, M, ready_solder):
    
     return neigborhoods
 
-def color_draw(N, M, L, desant):
+def ConquestCampaign(N, M, L, battalion):
     matrix = create_matrix(N, M)
-    ready_solder = parse_list(L, desant)
+    ready_solder = parse_list(L, battalion)
     cnt = 0
     while True:
         neigborhoods = []
@@ -43,5 +43,3 @@ def color_draw(N, M, L, desant):
             ready_solder = neigborhoods
         else:
             return cnt
-
-print(color_draw(3, 4, 2, [2, 2, 3, 4]))
