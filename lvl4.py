@@ -45,5 +45,4 @@ def ConquestCampaign(N, M, L, battalion):
             ready_solder = neigborhoods
         else:
             return cnt
-print(ConquestCampaign(3, 4, 1, [3, 4]))
         
