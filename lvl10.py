@@ -51,6 +51,6 @@ def TheRabbitsFoot(s, encode):
             for j in range(y):
                 if i < len(spisok[j]):
                     string.append(spisok[j][i])
-            string.append(' ')
         result = ''.join(string)
         return result
+    
