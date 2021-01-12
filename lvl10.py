@@ -58,5 +58,3 @@ def TheRabbitsFoot(s, encode):
                 string.append(' ')
         result = ''.join(string)
         return result
-        
-print(TheRabbitsFoot('иcтория о похищении детей', True))
