@@ -26,7 +26,8 @@ def TheRabbitsFoot(s, encode):
                 if(lengh > 0):
                     line.append(string[j][i])
                     lengh -= 1
-        return ''.join(line)
+        result = ''.join(line)
+        return result
     if(flag == True):
         a = a.replace(' ', '')
         lengh = len(a)
@@ -51,7 +52,8 @@ def TheRabbitsFoot(s, encode):
             for j in range(y):
                 if i < len(spisok[j]):
                     string.append(spisok[j][i])
-                    lengh -= 1
+                    if(lengh > 0):
+                        lengh -= 1
             if(lengh > 0):
                 string.append(' ')
         result = ''.join(string)
