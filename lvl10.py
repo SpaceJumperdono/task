@@ -1,7 +1,7 @@
 def TheRabbitsFoot(s, encode):
     a = s
     flag = encode
-    if(flag == True):
+    if(flag == False):
         lengh = len(a.replace(' ', ''))
         string = [[]]
         j = 0
@@ -27,8 +27,7 @@ def TheRabbitsFoot(s, encode):
                     line.append(string[j][i])
                     lengh -= 1
         return ''.join(line)
-    
-    if(flag == False):
+    if(flag == True):
         a = a.replace(' ', '')
         lengh = len(a)
         sqrt = str(lengh ** 0.5)
