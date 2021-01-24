@@ -1,36 +1,45 @@
 def parse(s):
-    number = []
-    for i in s:
-        if i == chr(48):
-            number.append(0)
-        if i == chr(49):
-            number.append(1)
-        if i == chr(50):
-            number.append(2)
-        if i == chr(51):
-            number.append(3)
-        if i == chr(52):
-            number.append(4)
-        if i == chr(53):
-            number.append(5)
-        if i == chr(54):
-            number.append(6)
-        if i == chr(55):
-            number.append(7)
-        if i == chr(56):
-            number.append(8)
-        if i == chr(57):
-            number.append(9)
     result = 0
-    for count, i in enumerate(reversed(number)):
-        result += i*(10**count)
+    if s == chr(48):
+        result = 0
+    if s == chr(49):
+        result = 1
+    if s == chr(50):
+        result = 2
+    if s == chr(51):
+        result = 3
+    if s == chr(52):
+        result = 4
+    if s == chr(53):
+        result = 5
+    if s == chr(54):
+        result = 6
+    if s == chr(55):
+        result = 7
+    if s == chr(56):
+        result = 8
+    if s == chr(57):
+        result = 9
     return result
     
 def BigMinus(s1, s2):
-    s1 = s1
-    s2 = s2
-    number1 = parse(s1)
-    number2 = parse(s2)
-    number3 = abs(number1 - number2)
-    return str(number3)
-
+    a = s1[::-1]
+    b = s2[::-1]
+    t = 0
+    shift = 0
+    result = ""
+    for i in range(len(a)):
+        if(i < len(b)):
+            t = parse(a[i]) - parse(b[i]) - shift
+            shift = 0
+        else:
+            t = parse(a[i]) - shift
+            shift = 0
+        if(t < 0):
+            t += 10
+            shift = 1
+        if(i == len(a) - 1 and t == 0):
+            break
+        else:
+            result += str(t)
+    return result[::-1]
