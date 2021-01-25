@@ -51,4 +51,7 @@ def BigMinus(s1, s2):
             break
         else:
             result += str(t)
-    return result[::-1]
+    result = result[::-1]
+    if(result[0] == '0'):
+        result = "0"
+    return result
