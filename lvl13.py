@@ -17,7 +17,7 @@ def MassVote(N, Votes):
 
     if(flag == False):
         result = (max * 100) / 100
-        if(result > 50):
+        if(result >= 50):
             string = "majority winner " + str(position)
             return string
         if(result < 50):
