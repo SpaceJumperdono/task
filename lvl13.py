@@ -9,10 +9,8 @@ def MassVote(N, Votes):
         if(max < Votes[i]):
             max = Votes[i]
             position = i + 1
-            continue
-        if(max == Votes[i]):
-            flag = True
-            break
+    if(Votes.count(max) > 1):
+        flag = True
     for i in Votes:
         summa += i
     result = 0
