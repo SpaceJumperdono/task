@@ -26,4 +26,3 @@ def MassVote(N, Votes):
     else:
         string = "no winner"
         return string
-print(MassVote(3, [23, 50, 27]))
