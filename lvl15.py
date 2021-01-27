@@ -56,13 +56,16 @@ def Unmanned(L, N, track):
     t = track
     time = 0
     if(lengh > t[0][0]):
-        for i in range(len(t)):
-            if(i == 0):
-                time = t[i][0] + time_stop(t[i][0], t[i]) + (t[i+1][0] - t[i][0])
-            elif(i != 0 and i < number - 1):
-                time += time_stop(time, t[i]) + (t[i+1][0] - t[i-1][0])
-        time += lengh - t[number - 1][0]
-        return time
+        if(len(t) > 1):
+            for i in range(len(t)):
+                if(i == 0):
+                    time = t[i][0] + time_stop(t[i][0], t[i]) + (t[i+1][0] - t[i][0])
+                elif(i != 0 and i < number - 1):
+                    time += time_stop(time, t[i]) + (t[i+1][0] - t[i-1][0])
+            time += lengh - t[number - 1][0]
+            return time
+        else:
+            time = t[0][0] + time_stop(t[0][0], t[0]) + (lengh - t[0][0])
+            return time
     else:
         return lengh
-
