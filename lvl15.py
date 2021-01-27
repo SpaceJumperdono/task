@@ -35,15 +35,15 @@ def time_stop(time, track):
     time = time
     a = track
     line = check(time, track)
-    print(line)
     position_spisok = 0
     position_element = 0
     time_stop = 0
     for i in range(len(line)):
-        if(a[0] in line[i]):
+        if(time in line[i]):
             position_spisok = i
             for j in range(len(line[i])):
-                position_element = j
+                if(line[i][j] == time):
+                    position_element = j
     if(position_spisok%2 != 0):
         time_stop = 0
     else:
@@ -59,13 +59,15 @@ def Unmanned(L, N, track):
         if(len(t) > 1):
             for i in range(len(t)):
                 if(i == 0):
-                    time = t[i][0] + time_stop(t[i][0], t[i]) + (t[i+1][0] - t[i][0])
-                elif(i != 0 and i < number - 1):
-                    time += time_stop(time, t[i]) + (t[i+1][0] - t[i-1][0])
-            time += lengh - t[number - 1][0]
+                    time = t[0][0] + time_stop(t[0][0], t[0])
+                else:
+                    time += t[i][0] - t[i-1][0]
+                    time += time_stop(time, t[i])
+            time += lengh - t[number-1][0]
             return time
         else:
-            time = t[0][0] + time_stop(t[0][0], t[0]) + (lengh - t[0][0])
+            time = (t[0][0] + time_stop(t[0][0], t[0]))
+            time += lengh - t[0][0]
             return time
     else:
         return lengh
